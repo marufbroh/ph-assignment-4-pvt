@@ -1,4 +1,4 @@
-// Problem 2: Finding even or odd
+/* In this function "evenOdd" (which will be a string as input) I have given the output based on the total number of characters in the String. The output will be either 'even' or 'odd' */
 
 const input = 'maruff'
 
@@ -15,5 +15,6 @@ function evenOdd(str) {
         return "odd"
     }
 }
+
 const result = evenOdd(input);
 console.log(result);

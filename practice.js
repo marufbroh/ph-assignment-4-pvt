@@ -1,115 +1,94 @@
-// Problem 1: Let’s play a mind game
+/* In this function "mindGame" (which will be a positive number as input) I multiply that number by 3, then add 10, then divide by 2, then subtract 5, and return the output */
 
-// const anyNumber = 50;
+function mindGame(num) {
 
-// function mindGame(num) {
-//     if (typeof (num) !== 'number') {
-//         return "Please input a Number"
-//     }
-//     else {
-//         const output = (((num * 3) + 10) / 2) - 5;
-//         return output;
-//     }
-// }
-
-// const result = mindGame(anyNumber);
-// console.log(result);
-
-
-
-
-
-// Problem 2: Finding even or odd
-
-// const input = 'maruff'
-
-// function evenOdd(str) {
-
-//     if (typeof (str) !== 'string') {
-//         return "Please input a String"
-//     }
-
-//     else if (str.length % 2 === 0) {
-//         return "even"
-//     }
-//     else {
-//         return "odd"
-//     }
-// }
-// const result = evenOdd(input);
-// console.log(result);
-
-
-
-
-
-// Problem 3: Is Less or Greater than seven
-
-// const input = 15;
-
-// function isLGSeven(num) {
-// if (typeof (num) !== 'number') {
-//         return "Please input a Number"
-//     }
-
-//     else if (num - 7 < 7) {
-//         return (num - 7);
-//     }
-
-//     else {
-//         return (num * 2);
-//     }
-
-// }
-
-// const result = isLGSeven(input);
-// console.log(result);
-
-
-
-
-
-
-// Problem 4: Finding Bad data
-
-// const input = [1, 2, 5, -1];
-
-// function findingBadData(numbers) {
-//     if (typeof (numbers) !== 'object') {
-//         return "Please input a Array"
-//     }
-//     let totalOddNum = 0;
-//     for (let i = 0; i < numbers.length; i++) {
-//         const element = numbers[i];
-//         if (element < 0) {
-//             totalOddNum++;
-//         }
-//     }
-//     return totalOddNum;
-// }
-
-// const result = findingBadData(input);
-// console.log(result);
-
-
-
-
-
-
-// Problem 5: Convert your gems into diamond
-
-const firstFriendGems = 100;
-const secondFriendGems = 5;
-const thirdFrindGems = 1;
-
-function gemsToDiamond(gQuantityOf1stFrnd, gQuantityOf2ndFrnd, gQuantityOf3rdFrnd) {
-    if (typeof (gQuantityOf1stFrnd) !== 'number' || typeof (gQuantityOf2ndFrnd) !== 'number' || typeof (gQuantityOf3rdFrnd) !== 'number') {
-        return "Please input the Number in all"
+    if (typeof (num) !== 'number') {
+        return "Please input a Number"
     }
 
-    // const powOfGems1stFriend = 21;
-    // const powOfGems2ndFriend = 32;
-    // const powOfGems3rdFriend = 43;
+    else if (num < 0) {
+        return "Please input a positive Number"
+    }
+
+    else {
+        const output = (((num * 3) + 10) / 2) - 5;
+        return output;
+    }
+}
+
+
+
+
+/* In this function "evenOdd" (which will be a string as input) I have given the output based on the total number of characters in the String. The output will be either 'even' or 'odd' */
+
+function evenOdd(str) {
+
+    if (typeof (str) !== 'string') {
+        return "Please input a String"
+    }
+
+    else if (str.length % 2 === 0) {
+        return "even"
+    }
+    else {
+        return "odd"
+    }
+}
+
+
+
+
+/* Using the function "isLGSeven" (which will take a number as input), I calculate the difference between the input value and 7, and if it's less than 7, I returned that subtraction. Otherwise, I returned double the input. Means twice the number I will take as input. */
+
+function isLGSeven(value) {
+
+    if (typeof (value) !== 'number') {
+        return "Please input a Number"
+    }
+
+    else if (value - 7 < 7) {
+        return (value - 7);
+    }
+
+    else {
+        return (value * 2);
+    }
+}
+
+
+
+
+/* In this function "findingBadData" (which will be an array as input) I find how many negative numbers (less than zero) there are in the array and return that number. */
+
+function findingBadData(numbers) {
+
+    if (Array.isArray(numbers) !== true) {
+        return "Please input a Array"
+    }
+    let totalOddNum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        const element = numbers[i];
+        if (element < 0) {
+            totalOddNum++;
+        }
+    }
+    return totalOddNum;
+}
+
+
+
+
+/* In this function "gemsToDiamond" I inputed three numbers of gems from three friends and the output will be total friend1 gems*21, friend2 gems*32 and friend3 gems*43. Else if the total is greater than (1000*2) the output will be subtraction of the total by 2000. */
+
+function gemsToDiamond(gQuantityOf1stFrnd, gQuantityOf2ndFrnd, gQuantityOf3rdFrnd) {
+
+    if (gQuantityOf1stFrnd == null || gQuantityOf2ndFrnd == null || gQuantityOf3rdFrnd == null) {
+        return "Must provide three Numbers"
+    }
+
+    else if (typeof (gQuantityOf1stFrnd) !== 'number' || typeof (gQuantityOf2ndFrnd) !== 'number' || typeof (gQuantityOf3rdFrnd) !== 'number') {
+        return "Please input the Number in all"
+    }
 
     const totalDiamond = (gQuantityOf1stFrnd * 21) + (gQuantityOf2ndFrnd * 32) + (gQuantityOf3rdFrnd * 43);
 
@@ -120,6 +99,3 @@ function gemsToDiamond(gQuantityOf1stFrnd, gQuantityOf2ndFrnd, gQuantityOf3rdFrn
         return totalDiamond;
     }
 }
-
-const result = gemsToDiamond(firstFriendGems, secondFriendGems, thirdFrindGems);
-console.log(result);

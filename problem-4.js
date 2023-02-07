@@ -1,9 +1,10 @@
-// Problem 4: Finding Bad data
+/* In this function "findingBadData" (which will be an array as input) I find how many negative numbers (less than zero) there are in the array and return that number. */
 
-const input = [1, 2, 5, -1];
+const input = [-4, -9, -5, -33, -55];
 
 function findingBadData(numbers) {
-    if (typeof (numbers) !== 'object') {
+
+    if (Array.isArray(numbers) !== true) {
         return "Please input a Array"
     }
     let totalOddNum = 0;
